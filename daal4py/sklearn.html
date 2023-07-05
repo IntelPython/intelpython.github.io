@@ -1,102 +1,70 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Scikit-Learn API and patching &mdash; daal4py 2021.1 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/style.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>Scikit-Learn API and patching &mdash; daal4py 2021 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Examples" href="examples.html" /> 
+    <link rel="prev" title="Examples" href="examples.html" />
+    <script defer type="text/javascript" src="https://www.intel.com/content/dam/www/global/wap/performance-config.js" ></script>
+    <script type="text/javascript">
+        // Configure TMS settings
+        var wapLocalCode = 'us-en'; // Dynamically set per localized site, see mapping table for values
+        var wapSection = "scikit-learn"; // WAP team will give you a unique section for your site
+        // Load TMS
+        if(document.location.href.contains("intel.github.io/scikit-learn-intelex")){
+          (function () {
+            var url = 'https://www.intel.com/content/dam/www/global/wap/tms-loader.js'; // WAP file URL
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true; po.src = url;
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+      }
+      </script>
+
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="contents.html" class="icon icon-home"> daal4py
           
-
-          
+          <a href="contents.html" class="icon icon-home">
+            daal4py
           </a>
-
-          
-            
-            
-              <div class="version">
-                2021
-              </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">About daal4py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model-builders.html">Model Builders</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Supported Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scaling.html">Distribution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="streaming.html">Streaming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scaling.html">Distributed Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streaming.html">Streaming Mode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Scikit-Learn API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#deprecation-notice">Deprecation Notice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#onedal-accelerated-scikit-learn">oneDAL accelerated scikit-learn</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#scikit-learn-verbose">scikit-learn verbose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#scikit-learn-api">scikit-learn API</a></li>
@@ -104,78 +72,44 @@
 </li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="contents.html">daal4py</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="contents.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>Scikit-Learn API and patching</li>
-    
-    
+      <li><a href="contents.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Scikit-Learn API and patching</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/sklearn.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="scikit-learn-api-and-patching">
-<span id="sklearn"></span><h1>Scikit-Learn API and patching<a class="headerlink" href="#scikit-learn-api-and-patching" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="scikit-learn-api-and-patching">
+<span id="sklearn"></span><h1>Scikit-Learn API and patching<a class="headerlink" href="#scikit-learn-api-and-patching" title="Permalink to this heading"></a></h1>
 <p>Python interface to efficient Intel(R) oneAPI Data Analytics Library provided by daal4py allows one
 to create scikit-learn compatible estimators, transformers, clusterers, etc. powered by oneDAL which
 are nearly as efficient as native programs.</p>
-<div class="section" id="onedal-accelerated-scikit-learn">
-<span id="sklearn-patches"></span><h2>oneDAL accelerated scikit-learn<a class="headerlink" href="#onedal-accelerated-scikit-learn" title="Permalink to this headline">¶</a></h2>
+<section id="deprecation-notice">
+<h2>Deprecation Notice<a class="headerlink" href="#deprecation-notice" title="Permalink to this heading"></a></h2>
+<p>Scikit-learn patching functionality in daal4py was deprecated and moved to a separate
+package, <a class="reference external" href="https://github.com/intel/scikit-learn-intelex">Intel(R) Extension for Scikit-learn*</a>.
+All future patches will be available only in Intel(R) Extension for Scikit-learn*.
+Please use the scikit-learn-intelex package instead of daal4py for the scikit-learn acceleration.</p>
+</section>
+<section id="onedal-accelerated-scikit-learn">
+<span id="sklearn-patches"></span><h2>oneDAL accelerated scikit-learn<a class="headerlink" href="#onedal-accelerated-scikit-learn" title="Permalink to this heading"></a></h2>
 <p>daal4py can dynamically patch scikit-learn estimators to use Intel(R) oneAPI Data Analytics Library
 as the underlying solver, while getting the same solution faster.</p>
 <p>It is possible to enable those patches without editing the code of a scikit-learn application by
@@ -206,7 +140,7 @@ you can enable daal4py patches through an environment variable. To do this, set 
 </div>
 <p id="sklearn-algorithms">Applying the monkey patch will impact the following existing scikit-learn
 algorithms:</p>
-<table class="colwidths-given docutils align-left">
+<table class="docutils align-left">
 <colgroup>
 <col style="width: 15%" />
 <col style="width: 15%" />
@@ -228,8 +162,8 @@ algorithms:</p>
 </tr>
 <tr class="row-odd"><td><p>Classification</p></td>
 <td><p>RandomForestClassifier</p></td>
-<td><p>All parameters except <code class="docutils literal notranslate"><span class="pre">warmstart</span></code> = True and <code class="docutils literal notranslate"><span class="pre">cpp_alpha</span></code> != 0, <code class="docutils literal notranslate"><span class="pre">criterion</span></code> != ‘gini’.</p></td>
-<td><p>Multi-output and sparse data is not supported.</p></td>
+<td><p>All parameters except <code class="docutils literal notranslate"><span class="pre">warm_start</span></code> = True, <code class="docutils literal notranslate"><span class="pre">cpp_alpha</span></code> != 0, <code class="docutils literal notranslate"><span class="pre">criterion</span></code> != ‘gini’, <code class="docutils literal notranslate"><span class="pre">oob_score</span></code> = True.</p></td>
+<td><p>Multi-output, sparse data and out-of-bag score are not supported.</p></td>
 </tr>
 <tr class="row-even"><td><p>Classification</p></td>
 <td><p>KNeighborsClassifier</p></td>
@@ -243,8 +177,8 @@ algorithms:</p>
 </tr>
 <tr class="row-even"><td><p>Regression</p></td>
 <td><p>RandomForestRegressor</p></td>
-<td><p>All parameters except <code class="docutils literal notranslate"><span class="pre">warmstart</span></code> = True and <code class="docutils literal notranslate"><span class="pre">cpp_alpha</span></code> != 0, <code class="docutils literal notranslate"><span class="pre">criterion</span></code> != ‘mse’.</p></td>
-<td><p>Multi-output and sparse data is not supported.</p></td>
+<td><p>All parameters except <code class="docutils literal notranslate"><span class="pre">warm_start</span></code> = True, <code class="docutils literal notranslate"><span class="pre">cpp_alpha</span></code> != 0, <code class="docutils literal notranslate"><span class="pre">criterion</span></code> != ‘mse’, <code class="docutils literal notranslate"><span class="pre">oob_score</span></code> = True.</p></td>
+<td><p>Multi-output, sparse data and out-of-bag score are not supported.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Regression</p></td>
 <td><p>KNeighborsRegressor</p></td>
@@ -306,6 +240,11 @@ algorithms:</p>
 <td><p>With metric=``cosine`` and <code class="docutils literal notranslate"><span class="pre">correlation</span></code>.</p></td>
 <td><p>Only dense data is supported.</p></td>
 </tr>
+<tr class="row-odd"><td><p>Other</p></td>
+<td><p>roc_auc_score</p></td>
+<td><p>Parameters <code class="docutils literal notranslate"><span class="pre">average</span></code>, <code class="docutils literal notranslate"><span class="pre">sample_weight</span></code>, <code class="docutils literal notranslate"><span class="pre">max_fpr</span></code> and <code class="docutils literal notranslate"><span class="pre">multi_class</span></code> are not supported.</p></td>
+<td><p>No limitations.</p></td>
+</tr>
 </tbody>
 </table>
 <p>Monkey-patched scikit-learn classes and functions passes scikit-learn’s own test
@@ -319,9 +258,9 @@ introspection. This assures scikit-learn API compatibility of all
 <p>daal4py supports optimizations for the last four versions of scikit-learn.
 The latest release of daal4py-2021.1 supports scikit-learn 0.21.X, 0.22.X, 0.23.X and 0.24.X.</p>
 </div>
-</div>
-<div class="section" id="scikit-learn-verbose">
-<span id="sklearn-verbose"></span><h2>scikit-learn verbose<a class="headerlink" href="#scikit-learn-verbose" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="scikit-learn-verbose">
+<span id="sklearn-verbose"></span><h2>scikit-learn verbose<a class="headerlink" href="#scikit-learn-verbose" title="Permalink to this heading"></a></h2>
 <p>To find out which implementation of the algorithm is currently used,
 set the environment variable.</p>
 <p>On Linux and Mac OS:</p>
@@ -336,15 +275,15 @@ set the environment variable.</p>
 that indicate which implementation is being called.
 These print statements are only available for <a class="reference internal" href="#sklearn-algorithms"><span class="std std-ref">scikit-learn algorithms with daal4py patches</span></a>.</p>
 <p>For example, for DBSCAN you get one of these print statements depending on which implementation is used:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">INFO</span><span class="p">:</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">DBSCAN</span><span class="o">.</span><span class="n">fit</span><span class="p">:</span> <span class="n">uses</span> <span class="n">Intel</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">oneAPI</span> <span class="n">Data</span> <span class="n">Analytics</span> <span class="n">Library</span> <span class="n">solver</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">INFO</span><span class="p">:</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">DBSCAN</span><span class="o">.</span><span class="n">fit</span><span class="p">:</span> <span class="n">running</span> <span class="n">accelerated</span> <span class="n">version</span> <span class="n">on</span> <span class="n">CPU</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">INFO</span><span class="p">:</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">DBSCAN</span><span class="o">.</span><span class="n">fit</span><span class="p">:</span> <span class="n">uses</span> <span class="n">original</span> <span class="n">Scikit</span><span class="o">-</span><span class="n">learn</span> <span class="n">solver</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">INFO</span><span class="p">:</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">DBSCAN</span><span class="o">.</span><span class="n">fit</span><span class="p">:</span> <span class="n">fallback</span> <span class="n">to</span> <span class="n">original</span> <span class="n">Scikit</span><span class="o">-</span><span class="n">learn</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="scikit-learn-api">
-<span id="sklearn-api"></span><h2>scikit-learn API<a class="headerlink" href="#scikit-learn-api" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="scikit-learn-api">
+<span id="sklearn-api"></span><h2>scikit-learn API<a class="headerlink" href="#scikit-learn-api" title="Permalink to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">daal4py.sklearn</span></code> package contains scikit-learn compatible API which
 implement a subset of scikit-learn algorithms using Intel(R) oneAPI Data Analytics Library.</p>
 <p>Currently, these include:</p>
@@ -384,54 +323,37 @@ patched, or not. For example:</p>
 <span class="n">clf_v</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># output: 0.9905397885364496</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="examples.html" class="btn btn-neutral float-left" title="Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Intel.
-
-    </p>
+    <p>&#169; Copyright 2023, Intel.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
