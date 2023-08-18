@@ -55,15 +55,17 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">About daal4py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Model Builders</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#conversion">Conversion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#classification-and-regression-inference">Classification and Regression Inference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#limitations">Limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#classification-and-regression-inference">Classification and Regression Inference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#scikit-learn-style-estimators">Scikit-learn-style Estimators</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#articles-and-blog-posts">Articles and Blog Posts</a></li>
 </ul>
@@ -101,33 +103,42 @@
              
   <section id="model-builders-for-the-gradient-boosting-frameworks">
 <span id="model-builders"></span><h1>Model Builders for the Gradient Boosting Frameworks<a class="headerlink" href="#model-builders-for-the-gradient-boosting-frameworks" title="Permalink to this heading"></a></h1>
+<div class="admonition note" id="note">
+<p class="admonition-title">Note</p>
+<p>Scikit-learn patching functionality in daal4py was deprecated and moved to a separate package, <a class="reference external" href="https://github.com/intel/scikit-learn-intelex">Intel(R) Extension for Scikit-learn*</a>.
+All future patches will be available only in Intel(R) Extension for Scikit-learn*. Use the scikit-learn-intelex package instead of daal4py for the scikit-learn acceleration.</p>
+</div>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
 <p>Gradient boosting on decision trees is one of the most accurate and efficient
 machine learning algorithms for classification and regression.
-The most popular implementations of it are the XGBoost*,
-LightGBM*, and CatBoost* frameworks.
-daal4py Model Builders deliver the accelerated
+The most popular implementations of it are:</p>
+<ul class="simple">
+<li><p>XGBoost*</p></li>
+<li><p>LightGBM*</p></li>
+<li><p>CatBoost*</p></li>
+</ul>
+<p>daal4py Model Builders deliver the accelerated
 models inference of those frameworks. The inference is performed by the oneDAL GBT implementation tuned
 for the best performance on the Intel(R) Architecture.</p>
 </section>
 <section id="conversion">
 <h2>Conversion<a class="headerlink" href="#conversion" title="Permalink to this heading"></a></h2>
-<p>The first step is to convert already trained model. There are similar
-APIs for different frameworks.
-XGBoost:</p>
+<p>The first step is to convert already trained model. The
+API usage for different frameworks is the same:</p>
+<p>XGBoost:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">daal4py</span> <span class="k">as</span> <span class="nn">d4p</span>
-<span class="n">d4p_model</span> <span class="o">=</span> <span class="n">d4p</span><span class="o">.</span><span class="n">get_gbt_model_from_xgboost</span><span class="p">(</span><span class="n">xgb_model</span><span class="p">)</span>
+<span class="n">d4p_model</span> <span class="o">=</span> <span class="n">d4p</span><span class="o">.</span><span class="n">mb</span><span class="o">.</span><span class="n">convert_model</span><span class="p">(</span><span class="n">xgb_model</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>LightGBM:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">daal4py</span> <span class="k">as</span> <span class="nn">d4p</span>
-<span class="n">d4p_model</span> <span class="o">=</span> <span class="n">d4p</span><span class="o">.</span><span class="n">get_gbt_model_from_lightgbm</span><span class="p">(</span><span class="n">lgb_model</span><span class="p">)</span>
+<span class="n">d4p_model</span> <span class="o">=</span> <span class="n">d4p</span><span class="o">.</span><span class="n">mb</span><span class="o">.</span><span class="n">convert_model</span><span class="p">(</span><span class="n">lgb_model</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>CatBoost:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">daal4py</span> <span class="k">as</span> <span class="nn">d4p</span>
-<span class="n">d4p_model</span> <span class="o">=</span> <span class="n">d4p</span><span class="o">.</span><span class="n">get_gbt_model_from_catboost</span><span class="p">(</span><span class="n">cb_model</span><span class="p">)</span>
+<span class="n">d4p_model</span> <span class="o">=</span> <span class="n">d4p</span><span class="o">.</span><span class="n">mb</span><span class="o">.</span><span class="n">convert_model</span><span class="p">(</span><span class="n">cb_model</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -137,47 +148,33 @@ XGBoost:</p>
 </section>
 <section id="classification-and-regression-inference">
 <h2>Classification and Regression Inference<a class="headerlink" href="#classification-and-regression-inference" title="Permalink to this heading"></a></h2>
-<p>GBT implementation in daal4py assumes separate APIs for the classification and regression.
-Specify the corresponding API and match the corresponding problem
-in the initial framework.</p>
-<p>Classification:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d4p_cls_algo</span> <span class="o">=</span> <span class="n">d4p</span><span class="o">.</span><span class="n">gbt_classification_prediction</span><span class="p">(</span>
-    <span class="n">nClasses</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;classes_count&#39;</span><span class="p">],</span>
-    <span class="n">resultsToEvaluate</span><span class="o">=</span><span class="s2">&quot;computeClassLabels&quot;</span><span class="p">,</span>
-    <span class="n">fptype</span><span class="o">=</span><span class="s1">&#39;float&#39;</span>
-<span class="p">)</span>
+<p>The API is the same for classification and regression inference.
+Based on the original model passed to the <code class="docutils literal notranslate"><span class="pre">convert_model</span></code>, <code class="docutils literal notranslate"><span class="pre">d4p_prediction</span></code> is either the classification or regression output.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d4p_prediction</span> <span class="o">=</span> <span class="n">d4p_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Regression:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d4p_reg_algo</span> <span class="o">=</span> <span class="n">d4p</span><span class="o">.</span><span class="n">gbt_regression_prediction</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>Next, daal4py algorithm object needs compute method to be called.
-Both the data and the previously converted model should be passed with the results of the prediction
-available within the  <code class="docutils literal notranslate"><span class="pre">.prediction</span></code> parameter.</p>
-<p>Compute:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d4p_predictions</span> <span class="o">=</span> <span class="n">d4p_reg_algo</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">d4p_model</span><span class="p">)</span><span class="o">.</span><span class="n">prediction</span>
-</pre></div>
-</div>
-<p>The one-line variant of the same code:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d4p_prediction</span> <span class="o">=</span> <span class="n">d4p</span><span class="o">.</span><span class="n">gbt_regression_prediction</span><span class="p">()</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">d4p_model</span><span class="p">)</span><span class="o">.</span><span class="n">prediction</span>
+</div></blockquote>
+<p>Here, the <code class="docutils literal notranslate"><span class="pre">predict()</span></code> method of <code class="docutils literal notranslate"><span class="pre">d4p_model</span></code> is being used to make predictions on the <code class="docutils literal notranslate"><span class="pre">test_data</span></code> dataset.
+The <code class="docutils literal notranslate"><span class="pre">d4p_prediction</span></code> variable stores the predictions made by the <code class="docutils literal notranslate"><span class="pre">predict()</span></code> method.</p>
+<section id="scikit-learn-style-estimators">
+<h3>Scikit-learn-style Estimators<a class="headerlink" href="#scikit-learn-style-estimators" title="Permalink to this heading"></a></h3>
+<p>You can also use the scikit-learn-style classes <code class="docutils literal notranslate"><span class="pre">GBTDAALClassifier</span></code> and <code class="docutils literal notranslate"><span class="pre">GBTDAALRegressor</span></code> to convert and infer your models. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">daal4py.sklearn.ensemble</span> <span class="kn">import</span> <span class="n">GBTDAALRegressor</span>
+<span class="n">reg</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBRegressor</span><span class="p">()</span>
+<span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">d4p_predt</span> <span class="o">=</span> <span class="n">GBTDAALRegressor</span><span class="o">.</span><span class="n">convert_model</span><span class="p">(</span><span class="n">reg</span><span class="p">)</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
-<section id="limitations">
-<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this heading"></a></h2>
-<p>Missing Values (NaN)
-Note that there is temporary limitation on the use of missing values
-(NaN) during training and prediction. This problem is addressed on
-the master branch and to be available in the 2023.2 release.</p>
 </section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <p>Model Builders models conversion</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/blob/master/examples/daal4py/gbt_cls_model_create_from_xgboost_batch.py">XGBoost model conversion</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/blob/master/examples/daal4py/gbt_cls_model_create_from_lightgbm_batch.py">LightGBM model conversion</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/blob/master/examples/daal4py/gbt_cls_model_create_from_catboost_batch.py">CatBoost model conversion</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/blob/master/examples/daal4py/model_builders_xgboost.py">XGBoost model conversion</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/blob/master/examples/daal4py/model_builders_lightgbm.py">LightGBM model conversion</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/blob/master/examples/daal4py/model_builders_catboost.py">CatBoost model conversion</a></p></li>
 </ul>
 </section>
 <section id="articles-and-blog-posts">

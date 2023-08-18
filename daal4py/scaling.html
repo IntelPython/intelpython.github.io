@@ -55,7 +55,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">About daal4py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
@@ -97,6 +97,11 @@
              
   <section id="scaling-on-distributed-memory-multiprocessing">
 <span id="distributed"></span><h1>Scaling on Distributed Memory (Multiprocessing)<a class="headerlink" href="#scaling-on-distributed-memory-multiprocessing" title="Permalink to this heading"></a></h1>
+<div class="admonition note" id="note">
+<p class="admonition-title">Note</p>
+<p>Scikit-learn patching functionality in daal4py was deprecated and moved to a separate package, <a class="reference external" href="https://github.com/intel/scikit-learn-intelex">Intel(R) Extension for Scikit-learn*</a>.
+All future patches will be available only in Intel(R) Extension for Scikit-learn*. Use the scikit-learn-intelex package instead of daal4py for the scikit-learn acceleration.</p>
+</div>
 <section id="it-s-easy">
 <h2>It’s Easy<a class="headerlink" href="#it-s-easy" title="Permalink to this heading"></a></h2>
 <p>daal4py operates in SPMD style (Single Program Multiple Data), which means your

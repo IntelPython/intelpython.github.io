@@ -54,7 +54,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">About daal4py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
@@ -98,6 +98,11 @@
              
   <section id="scikit-learn-api-and-patching">
 <span id="sklearn"></span><h1>Scikit-Learn API and patching<a class="headerlink" href="#scikit-learn-api-and-patching" title="Permalink to this heading"></a></h1>
+<div class="admonition note" id="note">
+<p class="admonition-title">Note</p>
+<p>Scikit-learn patching functionality in daal4py was deprecated and moved to a separate package, <a class="reference external" href="https://github.com/intel/scikit-learn-intelex">Intel(R) Extension for Scikit-learn*</a>.
+All future patches will be available only in Intel(R) Extension for Scikit-learn*. Use the scikit-learn-intelex package instead of daal4py for the scikit-learn acceleration.</p>
+</div>
 <p>Python interface to efficient Intel(R) oneAPI Data Analytics Library provided by daal4py allows one
 to create scikit-learn compatible estimators, transformers, clusterers, etc. powered by oneDAL which
 are nearly as efficient as native programs.</p>
