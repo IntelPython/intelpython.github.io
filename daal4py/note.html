@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Input Data &mdash; daal4py 2021 documentation</title>
+  <title>&lt;no title&gt; &mdash; daal4py 2021 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -17,8 +17,6 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Model Builders for the Gradient Boosting Frameworks" href="model-builders.html" />
-    <link rel="prev" title="Fast, Scalable and Easy Machine Learning With DAAL4PY" href="index.html" />
     <script defer type="text/javascript" src="https://www.intel.com/content/dam/www/global/wap/performance-config.js" ></script>
     <script type="text/javascript">
         // Configure TMS settings
@@ -56,15 +54,9 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">About daal4py</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Data</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#numpy-arrays">Numpy Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#pandas-dataframes">Pandas DataFrames</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#scipy-sparse-csr-matrix">SciPy Sparse CSR Matrix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#csv-files">CSV Files</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model-builders.html">Model Builders</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Supported Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scaling.html">Distributed Mode</a></li>
@@ -87,9 +79,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="contents.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Input Data</li>
+      <li class="breadcrumb-item active">&lt;no title&gt;</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/data.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/note.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -97,50 +89,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="input-data">
-<span id="data"></span><h1>Input Data<a class="headerlink" href="#input-data" title="Permalink to this heading"></a></h1>
-<div class="admonition note" id="note">
+  <div class="admonition note" id="note">
 <p class="admonition-title">Note</p>
 <p>Scikit-learn patching functionality in daal4py was deprecated and moved to a separate package, <a class="reference external" href="https://github.com/intel/scikit-learn-intelex">Intel(R) Extension for Scikit-learn*</a>.
 All future patches will be available only in Intel(R) Extension for Scikit-learn*. Use the scikit-learn-intelex package instead of daal4py for the scikit-learn acceleration.</p>
 </div>
-<p>All array arguments to compute functions and to algorithm constructors can be
-provided in different formats. daal4py will automatically do its best to work on
-the provided data with minimal overhead, most notably without copying the data.</p>
-<section id="numpy-arrays">
-<h2>Numpy Arrays<a class="headerlink" href="#numpy-arrays" title="Permalink to this heading"></a></h2>
-<p>daal4py can directly handle all types of numpy arrays with numerical data
-without copying the entire data. Arrays can be homogeneous (e.g. simple dtype) or
-heterogeneous (structured array) as well as contiguous or non-contiguous.</p>
-</section>
-<section id="pandas-dataframes">
-<h2>Pandas DataFrames<a class="headerlink" href="#pandas-dataframes" title="Permalink to this heading"></a></h2>
-<p>daal4py directly accepts pandas DataFrames with columns of numerical data. No
-extra full copy is required.</p>
-</section>
-<section id="scipy-sparse-csr-matrix">
-<h2>SciPy Sparse CSR Matrix<a class="headerlink" href="#scipy-sparse-csr-matrix" title="Permalink to this heading"></a></h2>
-<p>daal4py can directly handle matrices of type scipy.sparse.csr_matrix without
-copying the entire data.</p>
-<p>Note: some algorithms can be configured to use an optimized compute path for CSR
-data. It is required to explicitly specify the CSR method, otherwise the default
-and less efficient method is used.</p>
-</section>
-<section id="csv-files">
-<h2>CSV Files<a class="headerlink" href="#csv-files" title="Permalink to this heading"></a></h2>
-<p>The compute functions daal4py’s algorithms additionally accept
-CSV-filenames. Internally, daal4py will use DAAL’s fast CSV reader to create
-contiguous homogeneous tables.</p>
-</section>
-</section>
 
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Fast, Scalable and Easy Machine Learning With DAAL4PY" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="model-builders.html" class="btn btn-neutral float-right" title="Model Builders for the Gradient Boosting Frameworks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 
