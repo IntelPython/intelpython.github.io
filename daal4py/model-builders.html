@@ -66,7 +66,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#scikit-learn-style-estimators">Scikit-learn-style Estimators</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#limitations">Limitations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#articles-and-blog-posts">Articles and Blog Posts</a></li>
 </ul>
@@ -150,14 +149,14 @@ API usage for different frameworks is the same:</p>
 <section id="classification-and-regression-inference">
 <h2>Classification and Regression Inference<a class="headerlink" href="#classification-and-regression-inference" title="Permalink to this heading"></a></h2>
 <p>The API is the same for classification and regression inference.
-Based on the original model passed to the <code class="docutils literal notranslate"><span class="pre">convert_model</span></code>, <code class="docutils literal notranslate"><span class="pre">daal_prediction</span></code> is either the classification or regression output.</p>
+Based on the original model passed to the <code class="docutils literal notranslate"><span class="pre">convert_model</span></code>, <code class="docutils literal notranslate"><span class="pre">d4p_prediction</span></code> is either the classification or regression output.</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">daal_prediction</span> <span class="o">=</span> <span class="n">daal_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d4p_prediction</span> <span class="o">=</span> <span class="n">d4p_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p>Here, the <code class="docutils literal notranslate"><span class="pre">predict()</span></code> method of <code class="docutils literal notranslate"><span class="pre">daal_model</span></code> is being used to make predictions on the <code class="docutils literal notranslate"><span class="pre">test_data</span></code> dataset.
-The <code class="docutils literal notranslate"><span class="pre">daal_prediction``variable</span> <span class="pre">stores</span> <span class="pre">the</span> <span class="pre">predictions</span> <span class="pre">made</span> <span class="pre">by</span> <span class="pre">the</span> <span class="pre">``predict()</span></code> method.</p>
+<p>Here, the <code class="docutils literal notranslate"><span class="pre">predict()</span></code> method of <code class="docutils literal notranslate"><span class="pre">d4p_model</span></code> is being used to make predictions on the <code class="docutils literal notranslate"><span class="pre">test_data</span></code> dataset.
+The <code class="docutils literal notranslate"><span class="pre">d4p_prediction</span></code> variable stores the predictions made by the <code class="docutils literal notranslate"><span class="pre">predict()</span></code> method.</p>
 <section id="scikit-learn-style-estimators">
 <h3>Scikit-learn-style Estimators<a class="headerlink" href="#scikit-learn-style-estimators" title="Permalink to this heading"></a></h3>
 <p>You can also use the scikit-learn-style classes <code class="docutils literal notranslate"><span class="pre">GBTDAALClassifier</span></code> and <code class="docutils literal notranslate"><span class="pre">GBTDAALRegressor</span></code> to convert and infer your models. For example:</p>
@@ -168,13 +167,6 @@ The <code class="docutils literal notranslate"><span class="pre">daal_prediction
 </pre></div>
 </div>
 </section>
-</section>
-<section id="limitations">
-<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this heading"></a></h2>
-<p>Missing Values (NaN)
-Note that there is temporary limitation on the use of missing values
-(NaN) during training and prediction. This problem is addressed on
-the master branch and to be available in the 2023.2 release.</p>
 </section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
