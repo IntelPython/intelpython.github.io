@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Model Builders for the Gradient Boosting Frameworks &mdash; daal4py 2021 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>Model Builders for the Gradient Boosting Frameworks &mdash; daal4py 2021.1 documentation</title>
+      <link rel="stylesheet" href="_static/style.css" type="text/css" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
@@ -47,6 +50,9 @@
           <a href="contents.html" class="icon icon-home">
             daal4py
           </a>
+              <div class="version">
+                2021
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -55,17 +61,19 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">About daal4py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Model Builders</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#conversion">Conversion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#classification-and-regression-inference">Classification and Regression Inference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#classification-and-regression-inference">Classification and Regression Inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shap-value-calculation-for-regression-models">SHAP Value Calculation for Regression Models</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#scikit-learn-style-estimators">Scikit-learn-style Estimators</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#limitations">Limitations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#articles-and-blog-posts">Articles and Blog Posts</a></li>
 </ul>
@@ -121,6 +129,12 @@ The most popular implementations of it are:</p>
 <p>daal4py Model Builders deliver the accelerated
 models inference of those frameworks. The inference is performed by the oneDAL GBT implementation tuned
 for the best performance on the Intel(R) Architecture.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently, experimental support for XGBoost* and LightGBM* categorical data is not supported.
+For the model conversion to work with daal4py, convert non-numeric data to numeric data
+before training and converting the model.</p>
+</div>
 </section>
 <section id="conversion">
 <h2>Conversion<a class="headerlink" href="#conversion" title="Permalink to this heading"></a></h2>
@@ -149,7 +163,7 @@ API usage for different frameworks is the same:</p>
 <section id="classification-and-regression-inference">
 <h2>Classification and Regression Inference<a class="headerlink" href="#classification-and-regression-inference" title="Permalink to this heading"></a></h2>
 <p>The API is the same for classification and regression inference.
-Based on the original model passed to the <code class="docutils literal notranslate"><span class="pre">convert_model</span></code>, <code class="docutils literal notranslate"><span class="pre">d4p_prediction</span></code> is either the classification or regression output.</p>
+Based on the original model passed to the <code class="docutils literal notranslate"><span class="pre">convert_model()</span></code>, <code class="docutils literal notranslate"><span class="pre">d4p_prediction</span></code> is either the classification or regression output.</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d4p_prediction</span> <span class="o">=</span> <span class="n">d4p_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
 </pre></div>
@@ -157,6 +171,35 @@ Based on the original model passed to the <code class="docutils literal notransl
 </div></blockquote>
 <p>Here, the <code class="docutils literal notranslate"><span class="pre">predict()</span></code> method of <code class="docutils literal notranslate"><span class="pre">d4p_model</span></code> is being used to make predictions on the <code class="docutils literal notranslate"><span class="pre">test_data</span></code> dataset.
 The <code class="docutils literal notranslate"><span class="pre">d4p_prediction</span></code> variable stores the predictions made by the <code class="docutils literal notranslate"><span class="pre">predict()</span></code> method.</p>
+</section>
+<section id="shap-value-calculation-for-regression-models">
+<h2>SHAP Value Calculation for Regression Models<a class="headerlink" href="#shap-value-calculation-for-regression-models" title="Permalink to this heading"></a></h2>
+<p>SHAP contribution and interaction value calculation are natively supported by models created with daal4py Model Builders.
+For these models, the <code class="docutils literal notranslate"><span class="pre">predict()</span></code> method takes additional keyword arguments:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d4p_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">pred_contribs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>      <span class="c1"># for SHAP contributions</span>
+<span class="n">d4p_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">pred_interactions</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># for SHAP interactions</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>The returned prediction has the shape:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">(n_rows,</span> <span class="pre">n_features</span> <span class="pre">+</span> <span class="pre">1)</span></code>  for SHAP contributions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(n_rows,</span> <span class="pre">n_features</span> <span class="pre">+</span> <span class="pre">1,</span> <span class="pre">n_features</span> <span class="pre">+</span> <span class="pre">1)</span></code> for SHAP interactions</p></li>
+</ul>
+</div></blockquote>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">n_rows</span></code> is the number of rows (i.e., observations) in
+<code class="docutils literal notranslate"><span class="pre">test_data</span></code>, and <code class="docutils literal notranslate"><span class="pre">n_features</span></code> is the number of features in the dataset.</p>
+<p>The prediction result for SHAP contributions includes a feature attribution value for each feature and a bias term for each observation.</p>
+<p>The prediction result for SHAP interactions comprises <code class="docutils literal notranslate"><span class="pre">(n_features</span> <span class="pre">+</span> <span class="pre">1)</span> <span class="pre">x</span> <span class="pre">(n_features</span> <span class="pre">+</span> <span class="pre">1)</span></code> values for all possible
+feature combinations, along with their corresponding bias terms.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The shapes of SHAP contributions and interactions are consistent with the XGBoost results.
+In contrast, the <a class="reference external" href="https://shap.readthedocs.io/en/latest/">SHAP Python package</a> drops bias terms, resulting
+in SHAP contributions (SHAP interactions) with one fewer column (one fewer column and row) per observation.</p>
+</div>
 <section id="scikit-learn-style-estimators">
 <h3>Scikit-learn-style Estimators<a class="headerlink" href="#scikit-learn-style-estimators" title="Permalink to this heading"></a></h3>
 <p>You can also use the scikit-learn-style classes <code class="docutils literal notranslate"><span class="pre">GBTDAALClassifier</span></code> and <code class="docutils literal notranslate"><span class="pre">GBTDAALRegressor</span></code> to convert and infer your models. For example:</p>
@@ -168,13 +211,22 @@ The <code class="docutils literal notranslate"><span class="pre">d4p_prediction<
 </div>
 </section>
 </section>
+<section id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this heading"></a></h2>
+<p>Model Builders support only base inference with prediction and probabilities prediction. The functionality is to be extended.
+Therefore, there are the following limitations:
+- The categorical features are not supported for conversion and prediction.
+- The multioutput models are not supported for conversion and prediction.
+- SHAP values can be calculated for regression models only.</p>
+</section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <p>Model Builders models conversion</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/blob/master/examples/daal4py/model_builders_xgboost.py">XGBoost model conversion</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/blob/master/examples/daal4py/model_builders_lightgbm.py">LightGBM model conversion</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/blob/master/examples/daal4py/model_builders_catboost.py">CatBoost model conversion</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/blob/main/examples/daal4py/model_builders_xgboost.py">XGBoost model conversion</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/blob/main/examples/daal4py/model_builders_xgboost_shap.py">SHAP value prediction from an XGBoost model</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/blob/main/examples/daal4py/model_builders_lightgbm.py">LightGBM model conversion</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/blob/main/examples/daal4py/model_builders_catboost.py">CatBoost model conversion</a></p></li>
 </ul>
 </section>
 <section id="articles-and-blog-posts">
@@ -196,7 +248,7 @@ The <code class="docutils literal notranslate"><span class="pre">d4p_prediction<
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Intel.</p>
+    <p>&#169; Copyright Intel.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
