@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scaling on Distributed Memory (Multiprocessing) &mdash; daal4py 2021 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>Scaling on Distributed Memory (Multiprocessing) &mdash; daal4py 2021.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/style.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
@@ -47,6 +52,9 @@
           <a href="contents.html" class="icon icon-home">
             daal4py
           </a>
+              <div class="version">
+                2021
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -55,7 +63,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">About daal4py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
@@ -154,47 +162,47 @@ daal4py can also be compiled for any other MPI implementation.</p>
 <ul class="simple">
 <li><p>PCA (pca)</p>
 <ul>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/pca_spmd.py">PCA</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/pca_spmd.py">PCA</a></p></li>
 </ul>
 </li>
 <li><p>SVD (svd)</p>
 <ul>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/svd_spmd.py">SVD</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/svd_spmd.py">SVD</a></p></li>
 </ul>
 </li>
 <li><p>Linear Regression Training (linear_regression_training)</p>
 <ul>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/linear_regression_spmd.py">Linear Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/linear_regression_spmd.py">Linear Regression</a></p></li>
 </ul>
 </li>
 <li><p>Ridge Regression Training (ridge_regression_training)</p>
 <ul>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/ridge_regression_spmd.py">Ridge Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/ridge_regression_spmd.py">Ridge Regression</a></p></li>
 </ul>
 </li>
 <li><p>Multinomial Naive Bayes Training (multinomial_naive_bayes_training)</p>
 <ul>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/naive_bayes_spmd.py">Naive Bayes</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/naive_bayes_spmd.py">Naive Bayes</a></p></li>
 </ul>
 </li>
 <li><p>K-Means (kmeans_init and kmeans)</p>
 <ul>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/kmeans_spmd.py">K-Means</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/kmeans_spmd.py">K-Means</a></p></li>
 </ul>
 </li>
 <li><p>Correlation and Variance-Covariance Matrices (covariance)</p>
 <ul>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/covariance_spmd.py">Covariance</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/covariance_spmd.py">Covariance</a></p></li>
 </ul>
 </li>
 <li><p>Moments of Low Order (low_order_moments)</p>
 <ul>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/low_order_moms_spmd.py">Low Order Moments</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/low_order_moms_spmd.py">Low Order Moments</a></p></li>
 </ul>
 </li>
 <li><p>QR Decomposition (qr)</p>
 <ul>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/qr_spmd.py">QR</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/qr_spmd.py">QR</a></p></li>
 </ul>
 </li>
 </ul>
@@ -212,7 +220,7 @@ daal4py can also be compiled for any other MPI implementation.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Intel.</p>
+    <p>&#169; Copyright Intel.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

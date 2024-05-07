@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Algorithms &mdash; daal4py 2021 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>Algorithms &mdash; daal4py 2021.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/style.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
@@ -47,6 +52,9 @@
           <a href="contents.html" class="icon icon-home">
             daal4py
           </a>
+              <div class="version">
+                2021
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -55,7 +63,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">About daal4py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
@@ -561,8 +569,8 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/decision_forest/decision-forest-classification.html">Intel(R) oneAPI Data Analytics Library Classification Decision Forest</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/decision_forest_classification_default_dense_batch.py">Single-Process Decision Forest Classification Default Dense method</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/decision_forest_classification_hist_batch.py">Single-Process Decision Forest Classification Histogram method</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/decision_forest_classification_default_dense.py">Single-Process Decision Forest Classification Default Dense method</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/decision_forest_classification_hist.py">Single-Process Decision Forest Classification Histogram method</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.decision_forest_classification_training">
@@ -591,6 +599,8 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <li><p><strong>maxLeafNodes</strong> (<em>size_t</em>) – [optional, default: -1]  Maximum number of leaf node. Default is 0 (unlimited)</p></li>
 <li><p><strong>maxBins</strong> (<em>size_t</em>) – [optional, default: -1]  Used with ‘hist’ split finding method only. Maximal number of discrete bins to bucket continuous features. Default is 256. Increasing the number results in higher computation costs</p></li>
 <li><p><strong>minBinSize</strong> (<em>size_t</em>) – [optional, default: -1]  Used with ‘hist’ split finding method only. Minimal number of observations in a bin. Default is 5</p></li>
+<li><p><strong>splitter</strong> (<em>str</em>) – [optional, default: “”]  Sets node splitting method. Default is best</p></li>
+<li><p><strong>binningStrategy</strong> (<em>str</em>) – [optional, default: “”]  Used with ‘hist’ split finding method only. Selects the strategy to group data points into bins. Allowed values are ‘quantiles’ (default), ‘averages’</p></li>
 </ul>
 </dd>
 </dl>
@@ -801,7 +811,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/decision_tree/decision-tree-classification.html">Intel(R) oneAPI Data Analytics Library Classification Decision Tree</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/decision_tree_classification_batch.py">Single-Process Decision Tree Classification</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/decision_tree_classification.py">Single-Process Decision Tree Classification</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.decision_tree_classification_training">
@@ -964,7 +974,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/gradient_boosted_trees/gradient-boosted-trees-classification.html">Intel(R) oneAPI Data Analytics Library Classification Gradient Boosted Tree</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/gradient_boosted_classification_batch.py">Single-Process Gradient Boosted Classification</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/gradient_boosted_classification.py">Single-Process Gradient Boosted Classification</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.gbt_classification_training">
@@ -1091,6 +1101,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <li><p><strong>fptype</strong> (<em>str</em>) – [optional, default: “double”] Data type to use in intermediate computations for the gbt algorithm, double or float</p></li>
 <li><p><strong>method</strong> (<em>str</em>) – [optional, default: “defaultDense”] gradient boosted trees computation method</p></li>
 <li><p><strong>nIterations</strong> (<em>size_t</em>) – [optional, default: -1]  Number of iterations of the trained model to be used for prediction</p></li>
+<li><p><strong>resultsToCompute</strong> (<em>str</em>) – [optional, default: “”]  64 bit integer flag that indicates the results to compute</p></li>
 <li><p><strong>resultsToEvaluate</strong> (<em>str</em>) – [optional, default: “”]  64 bit integer flag that indicates the results to compute</p></li>
 </ul>
 </dd>
@@ -1184,6 +1195,16 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 </dl>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="daal4py.gbt_classification_model.PredictionBias">
+<span class="sig-name descname"><span class="pre">PredictionBias</span></span><a class="headerlink" href="#daal4py.gbt_classification_model.PredictionBias" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>double</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -1192,7 +1213,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/k_nearest_neighbors/k-nearest-neighbors-knn-classifier.html">Intel(R) oneAPI Data Analytics Library k-Nearest Neighbors (kNN)</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/kdtree_knn_classification_batch.py">Single-Process kNN</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/kdtree_knn_classification.py">Single-Process kNN</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.kdtree_knn_classification_training">
@@ -1510,7 +1531,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/boosting/adaboost.html">Intel(R) oneAPI Data Analytics Library Classification AdaBoost</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/adaboost_batch.py">Single-Process AdaBoost Classification</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/adaboost.py">Single-Process AdaBoost Classification</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.adaboost_training">
@@ -1697,7 +1718,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 
 <dl class="py method">
 <dt class="sig sig-object py" id="daal4py.adaboost_model.WeakLearnerModel">
-<span class="sig-name descname"><span class="pre">WeakLearnerModel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#daal4py.adaboost_model.WeakLearnerModel" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">WeakLearnerModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#daal4py.adaboost_model.WeakLearnerModel" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>classifier_model (or derived)</p>
@@ -1713,7 +1734,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/boosting/brownboost.html">Intel(R) oneAPI Data Analytics Library Classification BrownBoost</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/brownboost_batch.py">Single-Process BrownBoost Classification</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/brownboost.py">Single-Process BrownBoost Classification</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.brownboost_training">
@@ -1892,7 +1913,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 
 <dl class="py method">
 <dt class="sig sig-object py" id="daal4py.brownboost_model.WeakLearnerModel">
-<span class="sig-name descname"><span class="pre">WeakLearnerModel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#daal4py.brownboost_model.WeakLearnerModel" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">WeakLearnerModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#daal4py.brownboost_model.WeakLearnerModel" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>classifier_model (or derived)</p>
@@ -1908,7 +1929,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/boosting/logitboost.html">Intel(R) oneAPI Data Analytics Library Classification LogitBoost</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/logitboost_batch.py">Single-Process LogitBoost Classification</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/logitboost.py">Single-Process LogitBoost Classification</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.logitboost_training">
@@ -2085,7 +2106,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 
 <dl class="py method">
 <dt class="sig sig-object py" id="daal4py.logitboost_model.WeakLearnerModel">
-<span class="sig-name descname"><span class="pre">WeakLearnerModel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#daal4py.logitboost_model.WeakLearnerModel" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">WeakLearnerModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#daal4py.logitboost_model.WeakLearnerModel" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>regression_model (or derived)</p>
@@ -2101,7 +2122,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/stump/classification.html">Intel(R) oneAPI Data Analytics Library Classification Weak Learner Stump</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/stump_classification_batch.py">Single-Process Stump Weak Learner Classification</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/stump_classification.py">Single-Process Stump Weak Learner Classification</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.stump_classification_training">
@@ -2304,9 +2325,9 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/naive_bayes/naive-bayes-classifier.html">Intel(R) oneAPI Data Analytics Library Naive Bayes</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/naive_bayes_batch.py">Single-Process Naive Bayes</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/naive_bayes_streaming.py">Streaming Naive Bayes</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/naive_bayes_spmd.py">Multi-Process Naive Bayes</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/naive_bayes.py">Single-Process Naive Bayes</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/naive_bayes_streaming.py">Streaming Naive Bayes</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/naive_bayes_spmd.py">Multi-Process Naive Bayes</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.multinomial_naive_bayes_training">
@@ -2494,7 +2515,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Note: For the labels parameter, data is formatted as -1s and 1s</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/svm_batch.py">Single-Process SVM</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/svm.py">Single-Process SVM</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.svm_training">
@@ -2701,8 +2722,8 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/logistic_regression/logistic-regression.html">Intel(R) oneAPI Data Analytics Library Logistic Regression</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/log_reg_binary_dense_batch.py">Single-Process Binary Class Logistic Regression</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/log_reg_dense_batch.py">Single-Process Logistic Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/log_reg_binary_dense.py">Single-Process Binary Class Logistic Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/log_reg_dense.py">Single-Process Logistic Regression</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.logistic_regression_training">
@@ -2891,8 +2912,8 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/decision_forest/decision-forest-regression.html">Intel(R) oneAPI Data Analytics Library Regression Decision Forest</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/decision_forest_regression_default_dense_batch.py">Single-Process Decision Forest Regression Default Dense method</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/decision_forest_regression_hist_batch.py">Single-Process Decision Forest Regression Histogram method</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/decision_forest_regression_default_dense.py">Single-Process Decision Forest Regression Default Dense method</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/decision_forest_regression_hist.py">Single-Process Decision Forest Regression Histogram method</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.decision_forest_regression_training">
@@ -2919,6 +2940,8 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <li><p><strong>maxLeafNodes</strong> (<em>size_t</em>) – [optional, default: -1]  Maximum number of leaf node. Default is 0 (unlimited)</p></li>
 <li><p><strong>maxBins</strong> (<em>size_t</em>) – [optional, default: -1]  Used with ‘hist’ split finding method only. Maximal number of discrete bins to bucket continuous features. Default is 256. Increasing the number results in higher computation costs</p></li>
 <li><p><strong>minBinSize</strong> (<em>size_t</em>) – [optional, default: -1]  Used with ‘hist’ split finding method only. Minimal number of observations in a bin. Default is 5</p></li>
+<li><p><strong>splitter</strong> (<em>str</em>) – [optional, default: “”]  Sets node splitting method. Default is best</p></li>
+<li><p><strong>binningStrategy</strong> (<em>str</em>) – [optional, default: “”]  Used with ‘hist’ split finding method only. Selects the strategy to group data points into bins. Allowed values are ‘quantiles’ (default), ‘averages’</p></li>
 </ul>
 </dd>
 </dl>
@@ -3086,7 +3109,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/decision_tree/decision-tree-regression.html">Intel(R) oneAPI Data Analytics Library Regression Decision Tree</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/decision_tree_regression_batch.py">Single-Process Decision Tree Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/decision_tree_regression.py">Single-Process Decision Tree Regression</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.decision_tree_regression_training">
@@ -3211,7 +3234,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/gradient_boosted_trees/gradient-boosted-trees-regression.html">Intel(R) oneAPI Data Analytics Library Regression Gradient Boosted Tree</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/gradient_boosted_regression_batch.py">Single-Process Boosted Regression Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/gradient_boosted_regression.py">Single-Process Boosted Regression Regression</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.gbt_regression_training">
@@ -3334,6 +3357,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <li><p><strong>fptype</strong> (<em>str</em>) – [optional, default: “double”] Data type to use in intermediate computations for model-based prediction</p></li>
 <li><p><strong>method</strong> (<em>str</em>) – [optional, default: “defaultDense”] Computation method in the batch processing mode</p></li>
 <li><p><strong>nIterations</strong> (<em>size_t</em>) – [optional, default: -1]  Number of iterations of the trained model to be uses for prediction</p></li>
+<li><p><strong>resultsToCompute</strong> (<em>str</em>) – [optional, default: “”]  64 bit integer flag that indicates the results to compute</p></li>
 </ul>
 </dd>
 </dl>
@@ -3396,6 +3420,16 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 </dl>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="daal4py.gbt_regression_model.PredictionBias">
+<span class="sig-name descname"><span class="pre">PredictionBias</span></span><a class="headerlink" href="#daal4py.gbt_regression_model.PredictionBias" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>double</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -3404,9 +3438,9 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/linear_ridge_regression/linear-regression.html">Intel(R) oneAPI Data Analytics Library Linear Regression</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/linear_regression_batch.py">Single-Process Linear Regression</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/linear_regression_streaming.py">Streaming Linear Regression</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/linear_regression_spmd.py">Multi-Process Linear Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/linear_regression.py">Single-Process Linear Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/linear_regression_streaming.py">Streaming Linear Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/linear_regression_spmd.py">Multi-Process Linear Regression</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.linear_regression_training">
@@ -3565,7 +3599,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/lasso_elastic_net/lasso.html">Intel(R) oneAPI Data Analytics Library Least Absolute Shrinkage and Selection Operator</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/lasso_regression_batch.py">Single-Process LASSO Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/lasso_regression.py">Single-Process LASSO Regression</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.lasso_regression_training">
@@ -3738,9 +3772,9 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/linear_ridge_regression/ridge-regression.html">Intel(R) oneAPI Data Analytics Library Ridge Regression</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/ridge_regression_batch.py">Single-Process Ridge Regression</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/ridge_regression_streaming.py">Streaming Ridge Regression</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/ridge_regression_spmd.py">Multi-Process Ridge Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/ridge_regression.py">Single-Process Ridge Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/ridge_regression_streaming.py">Streaming Ridge Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/ridge_regression_spmd.py">Multi-Process Ridge Regression</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.ridge_regression_training">
@@ -3900,7 +3934,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/stump/regression.html">Intel(R) oneAPI Data Analytics Library Regression Stump</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/stump_regression_batch.py">Single-Process Stump Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/stump_regression.py">Single-Process Stump Regression</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.stump_regression_training">
@@ -4070,8 +4104,8 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/pca/principal-component-analysis.html">Intel(R) oneAPI Data Analytics Library PCA</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/pca_batch.py">Single-Process PCA</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/pca_spmd.py">Multi-Process PCA</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/pca.py">Single-Process PCA</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/pca_spmd.py">Multi-Process PCA</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.pca">
@@ -4084,6 +4118,8 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <li><p><strong>resultsToCompute</strong> (<em>str</em>) – [optional, default: “”]  64 bit integer flag that indicates the results to compute</p></li>
 <li><p><strong>nComponents</strong> (<em>size_t</em>) – [optional, default: -1]  number of components for reduced implementation</p></li>
 <li><p><strong>isDeterministic</strong> (<em>bool</em>) – [optional, default: False]  sign flip if required</p></li>
+<li><p><strong>doScale</strong> (<em>bool</em>) – [optional, default: False]  scaling if required</p></li>
+<li><p><strong>isCorrelation</strong> (<em>bool</em>) – [optional, default: False]  correlation is provided</p></li>
 <li><p><strong>normalization</strong> (<em>normalization_zscore_batchimpl__iface__</em>) – [optional, default: None]  Pointer to batch covariance</p></li>
 <li><p><strong>distributed</strong> (<em>bool</em>) – [optional, default: False] enable distributed computation (SPMD)</p></li>
 </ul>
@@ -4169,7 +4205,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/pca/transform.html">Intel(R) oneAPI Data Analytics Library PCA Transform</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/pca_transform_batch.py">Single-Process PCA Transform</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/pca_transform.py">Single-Process PCA Transform</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.pca_transform">
@@ -4226,8 +4262,8 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/kmeans/k-means-clustering.html">Intel(R) oneAPI Data Analytics Library K-Means Clustering</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/kmeans_batch.py">Single-Process K-Means</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/kmeans_spmd.py">Multi-Process K-Means</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/kmeans.py">Single-Process K-Means</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/kmeans_spmd.py">Multi-Process K-Means</a></p></li>
 </ul>
 <section id="k-means-initialization">
 <h3>K-Means Initialization<a class="headerlink" href="#k-means-initialization" title="Permalink to this heading"></a></h3>
@@ -4375,7 +4411,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/dbscan/index.html">Intel(R) oneAPI Data Analytics Library Density-Based Spatial Clustering of Applications with Noise</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/dbscan_batch.py">Single-Process DBSCAN</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/dbscan.py">Single-Process DBSCAN</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.dbscan">
@@ -4470,7 +4506,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/outlier_detection/multivariate.html">Intel(R) oneAPI Data Analytics Library Multivariate Outlier Detection</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/multivariate_outlier_batch.py">Single-Process Multivariate Outlier Detection</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/multivariate_outlier.py">Single-Process Multivariate Outlier Detection</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.multivariate_outlier_detection">
@@ -4526,7 +4562,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/outlier_detection/univariate.html">Intel(R) oneAPI Data Analytics Library Univariate Outlier Detection</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/univariate_outlier_batch.py">Single-Process Univariate Outlier Detection</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/univariate_outlier.py">Single-Process Univariate Outlier Detection</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.univariate_outlier_detection">
@@ -4582,7 +4618,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/outlier_detection/multivariate-bacon.html">Intel(R) oneAPI Data Analytics Library Multivariate Bacon Outlier Detection</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/bacon_outlier_batch.py">Single-Process Bacon Outlier Detection</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/bacon_outlier.py">Single-Process Bacon Outlier Detection</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.bacon_outlier_detection">
@@ -4641,9 +4677,9 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/optimization-solvers/objective-functions/mse.html">Intel(R) oneAPI Data Analytics Library MSE</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/adagrad_mse_batch.py">In Adagrad</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/lbfgs_mse_batch.py">In LBFGS</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/sgd_mse_batch.py">In SGD</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/adagrad_mse.py">In Adagrad</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/lbfgs_mse.py">In LBFGS</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/sgd_mse.py">In SGD</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.optimization_solver_mse">
@@ -4717,7 +4753,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/optimization-solvers/objective-functions/logistic-loss.html">Intel(R) oneAPI Data Analytics Library Logistic Loss</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/sgd_logistic_loss_batch.py">In SGD</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/sgd_logistic_loss.py">In SGD</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.optimization_solver_logistic_loss">
@@ -4787,7 +4823,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/optimization-solvers/objective-functions/cross-entropy.html">Intel(R) oneAPI Data Analytics Library Cross Entropy Loss</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/lbfgs_cr_entr_loss_batch.py">In LBFGS</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/lbfgs_cr_entr_loss.py">In LBFGS</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.optimization_solver_cross_entropy_loss">
@@ -4861,8 +4897,8 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/optimization-solvers/solvers/stochastic-gradient-descent-algorithm.html">Intel(R) oneAPI Data Analytics Library SGD</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/sgd_logistic_loss_batch.py">Using Logistic Loss</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/sgd_mse_batch.py">Using MSE</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/sgd_logistic_loss.py">Using Logistic Loss</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/sgd_mse.py">Using MSE</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.optimization_solver_sgd">
@@ -4934,7 +4970,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/optimization-solvers/solvers/limited-memory-broyden-fletcher-goldfarb-shanno-algorithm.html">Intel(R) oneAPI Data Analytics Library LBFGS</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/lbfgs_mse_batch.py">Using MSE</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/lbfgs_mse.py">Using MSE</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.optimization_solver_lbfgs">
@@ -5007,7 +5043,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/optimization-solvers/solvers/adaptive-subgradient-method.html">Intel(R) oneAPI Data Analytics Library AdaGrad</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/adagrad_mse_batch.py">Using MSE</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/adagrad_mse.py">Using MSE</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.optimization_solver_adagrad">
@@ -5077,7 +5113,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/optimization-solvers/solvers/stochastic-average-gradient-accelerated-method.html">Intel(R) oneAPI Data Analytics Library Stochastic Average Gradient Descent SAGA</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/saga_batch.py">Single Proces saga-logistc_loss</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/saga.py">Single Proces saga-logistc_loss</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.optimization_solver_saga">
@@ -5163,7 +5199,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/distance/cosine.html">Intel(R) oneAPI Data Analytics Library Cosine Distance</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/cosine_distance_batch.py">Single-Process Cosine Distance</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/cosine_distance.py">Single-Process Cosine Distance</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.cosine_distance">
@@ -5214,7 +5250,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/distance/correlation.html">Intel(R) oneAPI Data Analytics Library Correlation Distance</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/correlation_distance_batch.py">Single-Process Correlation Distance</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/correlation_distance.py">Single-Process Correlation Distance</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.correlation_distance">
@@ -5269,7 +5305,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/em/expectation-maximization.html#initialization">Intel(R) oneAPI Data Analytics Library Expectation-Maximization Initialization</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/em_gmm_batch.py">Single-Process Expectation-Maximization</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/em_gmm.py">Single-Process Expectation-Maximization</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.em_gmm_init">
@@ -5346,7 +5382,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/em/expectation-maximization.html#em-algorithm-for-the-gaussian-mixture-model">Intel(R) oneAPI Data Analytics Library Expectation-Maximization for the Gaussian Mixture Model</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/em_gmm_batch.py">Single-Process Expectation-Maximization</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/em_gmm.py">Single-Process Expectation-Maximization</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.em_gmm">
@@ -5451,8 +5487,8 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/qr/qr-without-pivoting.html">Intel(R) oneAPI Data Analytics Library QR Decomposition without pivoting</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/qr_batch.py">Single-Process QR</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/qr_streaming.py">Streaming QR</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/qr.py">Single-Process QR</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/qr_streaming.py">Streaming QR</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.qr">
@@ -5515,7 +5551,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/qr/qr-pivoted.html">Intel(R) oneAPI Data Analytics Library Pivoted QR Decomposition</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/pivoted_qr_batch.py">Single-Process Pivoted QR</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/pivoted_qr.py">Single-Process Pivoted QR</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.pivoted_qr">
@@ -5591,7 +5627,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/normalization/z-score.html">Intel(R) oneAPI Data Analytics Library Z-Score</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/normalization_zscore_batch.py">Single-Process Z-Score Normalization</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/normalization_zscore.py">Single-Process Z-Score Normalization</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.normalization_zscore">
@@ -5664,7 +5700,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/normalization/min-max.html">Intel(R) oneAPI Data Analytics Library Min-Max</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/normalization_minmax_batch.py">Single-Process Min-Max Normalization</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/normalization_minmax.py">Single-Process Min-Max Normalization</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.normalization_minmax">
@@ -5855,7 +5891,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/distributions/bernoulli.html">Intel(R) oneAPI Data Analytics Library Bernoulli Distribution</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/distributions_bernoulli_batch.py">Single-Process Bernoulli Distribution</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/distributions_bernoulli.py">Single-Process Bernoulli Distribution</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.distributions_bernoulli">
@@ -5898,7 +5934,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/distributions/normal.html">Intel(R) oneAPI Data Analytics Library Normal Distribution</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/distributions_normal_batch.py">Single-Process Normal Distribution</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/distributions_normal.py">Single-Process Normal Distribution</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.distributions_normal">
@@ -5942,7 +5978,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/distributions/uniform.html">Intel(R) oneAPI Data Analytics Library Uniform Distribution</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/distributions_uniform_batch.py">Single-Process Uniform Distribution</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/distributions_uniform.py">Single-Process Uniform Distribution</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.distributions_uniform">
@@ -5987,7 +6023,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/association_rules/association-rules.html">Intel(R) oneAPI Data Analytics Library Association Rules</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/association_rules_batch.py">Single-Process Association Rules</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/association_rules.py">Single-Process Association Rules</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.association_rules">
@@ -6087,7 +6123,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/cholesky/cholesky.html">Intel(R) oneAPI Data Analytics Library Cholesky Decomposition</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/cholesky_batch.py">Single-Process Cholesky</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/cholesky.py">Single-Process Cholesky</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.cholesky">
@@ -6138,9 +6174,9 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/covariance/correlation-and-variance-covariance-matrices.html">Intel(R) oneAPI Data Analytics Library Correlation and Variance-Covariance Matrices</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/covariance_batch.py">Single-Process Covariance</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/covariance_streaming.py">Streaming Covariance</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/covariance_spmd.py">Multi-Process Covariance</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/covariance.py">Single-Process Covariance</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/covariance_streaming.py">Streaming Covariance</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/covariance_spmd.py">Multi-Process Covariance</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.covariance">
@@ -6214,7 +6250,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/implicit_als/implicit-alternating-least-squares.html">Intel(R) oneAPI Data Analytics Library Implicit Alternating Least Squares</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/implicit_als_batch.py">Single-Process implicit ALS</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/implicit_als.py">Single-Process implicit ALS</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.implicit_als_training">
@@ -6347,9 +6383,9 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/moments/moments-of-low-order.html">Intel(R) oneAPI Data Analytics Library Moments of Low Order</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/low_order_moms_dense_batch.py">Single-Process Low Order Moments</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/low_order_moms_streaming.py">Streaming Low Order Moments</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/low_order_moms_spmd.py">Multi-Process Low Order Moments</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/low_order_moms_dense.py">Single-Process Low Order Moments</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/low_order_moms_streaming.py">Streaming Low Order Moments</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/low_order_moms_spmd.py">Multi-Process Low Order Moments</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.low_order_moments">
@@ -6493,7 +6529,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/quantiles/index.html">Intel(R) oneAPI Data Analytics Library Quantiles</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/quantiles_batch.py">Single-Process Quantiles</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/quantiles.py">Single-Process Quantiles</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.quantiles">
@@ -6545,9 +6581,9 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/svd/singular-value-decomposition.html">Intel(R) oneAPI Data Analytics Library SVD</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/svd_batch.py">Single-Process SVD</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/svd_streaming.py">Streaming SVD</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/svd_spmd.py">Multi-Process SVD</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/svd.py">Single-Process SVD</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/svd_streaming.py">Streaming SVD</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/svd_spmd.py">Multi-Process SVD</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.svd">
@@ -6622,7 +6658,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <p>Parameters and semantics are described in <a class="reference external" href="https://oneapi-src.github.io/oneDAL/daal/algorithms/sorting/index.html">Intel(R) oneAPI Data Analytics Library Sorting</a>.</p>
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/sorting_batch.py">Single-Process Sorting</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/sorting.py">Single-Process Sorting</a></p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="daal4py.sorting">
@@ -6672,17 +6708,17 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <h2>Trees<a class="headerlink" href="#trees" title="Permalink to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="daal4py.getTreeState">
-<span class="sig-prename descclassname"><span class="pre">daal4py.</span></span><span class="sig-name descname"><span class="pre">getTreeState</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#daal4py.getTreeState" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">daal4py.</span></span><span class="sig-name descname"><span class="pre">getTreeState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#daal4py.getTreeState" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <p class="rubric">Examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/decision_forest_regression_traverse_batch.py">Decision Forest Regression</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/decision_forest_classification_traverse_batch.py">Decision Forest Classification</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/decision_tree_regression_traverse_batch.py">Decision Tree Regression</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/decision_tree_classification_traverse_batch.py">Decision Tree Classification</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/gradient_boosted_regression_traverse_batch.py">Gradient Boosted Trees Regression</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/gradient_boosted_classification_traverse_batch.py">Gradient Boosted Trees Classification</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/decision_forest_regression_traverse.py">Decision Forest Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/decision_forest_classification_traverse.py">Decision Forest Classification</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/decision_tree_regression_traverse.py">Decision Tree Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/decision_tree_classification_traverse.py">Decision Tree Classification</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/gradient_boosted_regression_traverse.py">Gradient Boosted Trees Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/gradient_boosted_classification_traverse.py">Gradient Boosted Trees Classification</a></p></li>
 </ul>
 </section>
 </section>
@@ -6698,7 +6734,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Intel.</p>
+    <p>&#169; Copyright Intel.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fast, Scalable and Easy Machine Learning With DAAL4PY &mdash; daal4py 2021 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>Fast, Scalable and Easy Machine Learning With DAAL4PY &mdash; daal4py 2021.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/style.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
@@ -18,7 +23,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Input Data" href="data.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="contents.html" />
+    <link rel="prev" title="Contents" href="contents.html" />
     <script defer type="text/javascript" src="https://www.intel.com/content/dam/www/global/wap/performance-config.js" ></script>
     <script type="text/javascript">
         // Configure TMS settings
@@ -47,6 +52,9 @@
           <a href="contents.html" class="icon icon-home">
             daal4py
           </a>
+              <div class="version">
+                2021
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -55,7 +63,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">About daal4py</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#designed-for-data-scientists-and-framework-designers">Designed for Data Scientists and Framework Designers</a></li>
@@ -186,7 +194,7 @@ adding initializing/finalizing the network and adding a keyword-parameter:</p>
 </section>
 <section id="oneapi-and-gpu-support-in-daal4py">
 <h2>oneAPI and GPU support in daal4py<a class="headerlink" href="#oneapi-and-gpu-support-in-daal4py" title="Permalink to this heading"></a></h2>
-<p>daal4py oneAPI and GPU support is deprecated. Use <a class="reference external" href="https://intel.github.io/scikit-learn-intelex/oneapi-gpu.html#">scikit-learn-intelex</a>
+<p>daal4py oneAPI and GPU support is deprecated. Use <a class="reference external" href="https://intel.github.io/scikit-learn-intelex/latest/oneapi-gpu.html#">scikit-learn-intelex</a>
 instead.</p>
 </section>
 <section id="daal4py-s-design">
@@ -232,10 +240,10 @@ Oracle Linux Server release 7.4, using 64-bit floating point numbers</p>
 on Anaconda Cloud in <a class="reference external" href="https://anaconda.org/conda-forge/daal4py">Conda Forge channel</a>
 and in <a class="reference external" href="https://anaconda.org/intel/daal4py">Intel channel</a>.
 Sources and build instructions are available in
-<a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/daal4py">daal4py repository</a>.</p>
+<a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/daal4py">daal4py repository</a>.</p>
 <p>The daal4py package is available via same distribution channels and platforms as scikit-learn-intelex.
 See
-<cite>scikit-learn-intelex requirements &lt;https://intel.github.io/scikit-learn-intelex/system-requirements.html&gt;</cite> _</p>
+<cite>scikit-learn-intelex requirements &lt;https://intel.github.io/scikit-learn-intelex/latest/system-requirements.html&gt;</cite> _</p>
 <ul>
 <li><p>Install from PyPI:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">daal4py</span>
@@ -281,8 +289,9 @@ daal4py will work on the entire file content.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>We recommend using
-the ‘scikit-learn-intelex package patching &lt;<a class="reference external" href="https://intel.github.io/scikit-learn-intelex/what-is-patching.html">https://intel.github.io/scikit-learn-intelex/what-is-patching.html</a>&gt;’ _ for the scikit-learn patching. daal4py exposes some oneDAL solvers using a scikit-learn compatible API.</p>
+the ‘scikit-learn-intelex package patching &lt;<a class="reference external" href="https://intel.github.io/scikit-learn-intelex/latest/what-is-patching.html">https://intel.github.io/scikit-learn-intelex/latest/what-is-patching.html</a>&gt;’ _ for the scikit-learn patching.</p>
 </div>
+<p>daal4py exposes some oneDAL solvers using a scikit-learn compatible API.</p>
 <p>daal4py can furthermore monkey-patch the <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> package to use the DAAL
 solvers as drop-in replacement without any code change.</p>
 <p>Please refer to the section on <a class="reference internal" href="sklearn.html#sklearn"><span class="std std-ref">scikit-learn API and patching</span></a>
@@ -294,14 +303,14 @@ for more details.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="contents.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="contents.html" class="btn btn-neutral float-left" title="Contents" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="data.html" class="btn btn-neutral float-right" title="Input Data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Intel.</p>
+    <p>&#169; Copyright Intel.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

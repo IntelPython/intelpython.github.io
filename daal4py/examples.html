@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Examples &mdash; daal4py 2021 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>Examples &mdash; daal4py 2021.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/style.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
@@ -47,6 +52,9 @@
           <a href="contents.html" class="icon icon-home">
             daal4py
           </a>
+              <div class="version">
+                2021
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -55,7 +63,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">About daal4py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
@@ -106,141 +114,141 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
 <h2>General usage<a class="headerlink" href="#general-usage" title="Permalink to this heading"></a></h2>
 <p>Building models from Gradient Boosting frameworks</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/blob/master/examples/daal4py/gbt_cls_model_create_from_xgboost_batch.py">XGBoost* model conversion</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/blob/master/examples/daal4py/gbt_cls_model_create_from_lightgbm_batch.py">LightGBM* model conversion</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/blob/master/examples/daal4py/gbt_cls_model_create_from_catboost_batch.py">CatBoost* model conversion</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/blob/main/examples/daal4py/model_builders_xgboost.py">XGBoost* model conversion</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/blob/main/examples/daal4py/model_builders_lightgbm.py">LightGBM* model conversion</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/blob/main/examples/daal4py/model_builders_catboost.py">CatBoost* model conversion</a></p></li>
 </ul>
 <p>Principal Component Analysis (PCA) Transform</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/pca_batch.py">Single-Process PCA</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/pca_spmd.py">Multi-Process  PCA</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/pca.py">Single-Process PCA</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/pca_spmd.py">Multi-Process  PCA</a></p></li>
 </ul>
 <p>Singular Value Decomposition (SVD)</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/pca_transform_batch.py">Single-Process PCA Transform</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/svd_batch.py">Single-Process SVD</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/svd_streaming.py">Streaming SVD</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/svd_spmd.py">Multi-Process SVD</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/pca_transform.py">Single-Process PCA Transform</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/svd.py">Single-Process SVD</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/svd_streaming.py">Streaming SVD</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/svd_spmd.py">Multi-Process SVD</a></p></li>
 </ul>
 <p>Moments of Low Order</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/low_order_moms_dense_batch.py">Single-Process Low Order Moments</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/low_order_moms_dense_streaming.py">Streaming Low Order Moments</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/low_order_moms_spmd.py">Multi-Process Low Order Moments</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/low_order_moms_dense.py">Single-Process Low Order Moments</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/low_order_moms_dense_streaming.py">Streaming Low Order Moments</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/low_order_moms_spmd.py">Multi-Process Low Order Moments</a></p></li>
 </ul>
 <p>Correlation and Variance-Covariance Matrices</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/covariance_batch.py">Single-Process Covariance</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/covariance_streaming.py">Streaming Covariance</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/covariance_spmd.py">Multi-Process Covariance</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/covariance.py">Single-Process Covariance</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/covariance_streaming.py">Streaming Covariance</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/covariance_spmd.py">Multi-Process Covariance</a></p></li>
 </ul>
 <p>Decision Forest Classification</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/decision_forest_classification_default_dense_batch.py">Single-Process Decision Forest Classification Default Dense method</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/decision_forest_classification_hist_batch.py">Single-Process Decision Forest Classification Histogram method</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/decision_forest_classification_default_dense.py">Single-Process Decision Forest Classification Default Dense method</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/decision_forest_classification_hist.py">Single-Process Decision Forest Classification Histogram method</a></p></li>
 </ul>
 <p>Decision Tree Classification</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/decision_tree_classification_batch.py">Single-Process Decision Tree Classification</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/decision_tree_classification.py">Single-Process Decision Tree Classification</a></p></li>
 </ul>
 <p>Gradient Boosted Classification</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/gradient_boosted_classification_batch.py">Single-Process Gradient Boosted Classification</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/gradient_boosted_classification.py">Single-Process Gradient Boosted Classification</a></p></li>
 </ul>
 <p>k-Nearest Neighbors (kNN)</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/kdtree_knn_classification_batch.py">Single-Process kNN</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/kdtree_knn_classification.py">Single-Process kNN</a></p></li>
 </ul>
 <p>Multinomial Naive Bayes</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/naive_bayes_batch.py">Single-Process Naive Bayes</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/naive_bayes_streaming.py">Streaming Naive Bayes</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/naive_bayes_spmd.py">Multi-Process  Naive Bayes</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/naive_bayes.py">Single-Process Naive Bayes</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/naive_bayes_streaming.py">Streaming Naive Bayes</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/naive_bayes_spmd.py">Multi-Process  Naive Bayes</a></p></li>
 </ul>
 <p>Support Vector Machine (SVM)</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/svm_batch.py">Single-Process Binary SVM</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/svm_multiclass_batch.py">Single-Process Muticlass SVM</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/svm.py">Single-Process Binary SVM</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/svm_multiclass.py">Single-Process Muticlass SVM</a></p></li>
 </ul>
 <p>Logistic Regression</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/log_reg_binary_dense_batch.py">Single-Process Binary Class Logistic Regression</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/log_reg_dense_batch.py">Single-Process Logistic Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/log_reg_binary_dense.py">Single-Process Binary Class Logistic Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/log_reg_dense.py">Single-Process Logistic Regression</a></p></li>
 </ul>
 <p>Decision Forest Regression</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/decision_forest_regression_default_dense_batch.py">Single-Process Decision Forest Regression Default Dense method</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/decision_forest_regression_hist_batch.py">Single-Process Decision Forest Regression Histogram method</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/decision_tree_regression_batch.py">Single-Process Decision Tree Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/decision_forest_regression_default_dense.py">Single-Process Decision Forest Regression Default Dense method</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/decision_forest_regression_hist.py">Single-Process Decision Forest Regression Histogram method</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/decision_tree_regression.py">Single-Process Decision Tree Regression</a></p></li>
 </ul>
 <p>Gradient Boosted Regression</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/gradient_boosted_regression_batch.py">Single-Process Boosted Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/gradient_boosted_regression.py">Single-Process Boosted Regression</a></p></li>
 </ul>
 <p>Linear Regression</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/linear_regression_batch.py">Single-Process Linear Regression</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/linear_regression_streaming.py">Streaming Linear Regression</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/linear_regression_spmd.py">Multi-Process Linear Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/linear_regression.py">Single-Process Linear Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/linear_regression_streaming.py">Streaming Linear Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/linear_regression_spmd.py">Multi-Process Linear Regression</a></p></li>
 </ul>
 <p>Ridge Regression</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/ridge_regression_batch.py">Single-Process Ridge Regression</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/ridge_regression_streaming.py">Streaming Ridge Regression</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/ridge_regression_spmd.py">Multi-Process Ridge Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/ridge_regression.py">Single-Process Ridge Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/ridge_regression_streaming.py">Streaming Ridge Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/ridge_regression_spmd.py">Multi-Process Ridge Regression</a></p></li>
 </ul>
 <p>K-Means Clustering</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/kmeans_batch.py">Single-Process K-Means</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/kmeans_spmd.py">Multi-Process K-Means</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/kmeans.py">Single-Process K-Means</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/kmeans_spmd.py">Multi-Process K-Means</a></p></li>
 </ul>
 <p>Multivariate Outlier Detection</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/multivariate_outlier_batch.py">Single-Process Multivariate Outlier Detection</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/multivariate_outlier.py">Single-Process Multivariate Outlier Detection</a></p></li>
 </ul>
 <p>Univariate Outlier Detection</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/univariate_outlier_batch.py">Single-Process Univariate Outlier Detection</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/univariate_outlier.py">Single-Process Univariate Outlier Detection</a></p></li>
 </ul>
 <p>Optimization Solvers-Mean Squared Error Algorithm (MSE)</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/adagrad_mse_batch.py">MSE In Adagrad</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/lbfgs_mse_batch.py">MSE In LBFGS</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/sgd_mse_batch.py">MSE In SGD</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/adagrad_mse.py">MSE In Adagrad</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/lbfgs_mse.py">MSE In LBFGS</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/sgd_mse.py">MSE In SGD</a></p></li>
 </ul>
 <p>Logistic Loss</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/sgd_logistic_loss_batch.py">Logistic Loss SGD</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/sgd_logistic_loss.py">Logistic Loss SGD</a></p></li>
 </ul>
 <p>Stochastic Gradient Descent Algorithm</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/sgd_logistic_loss_batch.py">Stochastic Gradient Descent Algorithm Using Logistic Loss</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/sgd_mse_batch.py">Stochastic Gradient Descent Algorithm Using MSE</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/sgd_logistic_loss.py">Stochastic Gradient Descent Algorithm Using Logistic Loss</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/sgd_mse.py">Stochastic Gradient Descent Algorithm Using MSE</a></p></li>
 </ul>
 <p>Limited-Memory Broyden-Fletcher-Goldfarb-Shanno Algorithm</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/lbfgs_mse_batch.py">Limited-Memory Broyden-Fletcher-Goldfarb-Shanno Algorithm - Using MSE</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/lbfgs_mse.py">Limited-Memory Broyden-Fletcher-Goldfarb-Shanno Algorithm - Using MSE</a></p></li>
 </ul>
 <p>Adaptive Subgradient Method</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/adagrad_mse_batch.py">Adaptive Subgradient Method Using MSE</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/adagrad_mse.py">Adaptive Subgradient Method Using MSE</a></p></li>
 </ul>
 <p>Cosine Distance Matrix</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/cosine_distance_batch.py">Single-Process Cosine Distance</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/cosine_distance.py">Single-Process Cosine Distance</a></p></li>
 </ul>
 <p>Correlation Distance Matrix</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/correlation_distance_batch.py">Single-Process Correlation Distance</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/correlation_distance.py">Single-Process Correlation Distance</a></p></li>
 </ul>
 <p>Trees</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/decision_forest_regression_traverse_batch.py">Decision Forest Regression</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/decision_forest_classification_traverse_batch.py">Decision Forest Classification</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/decision_tree_regression_traverse_batch.py">Decision Tree Regression</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/decision_tree_classification_traverse_batch.py">Decision Tree Classification</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/gradient_boosted_regression_traverse_batch.py">Gradient Boosted Trees Regression</a></p></li>
-<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/master/examples/daal4py/gradient_boosted_classification_traverse_batch.py">Gradient Boosted Trees Classification</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/decision_forest_regression_traverse.py">Decision Forest Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/decision_forest_classification_traverse.py">Decision Forest Classification</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/decision_tree_regression_traverse.py">Decision Tree Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/decision_tree_classification_traverse.py">Decision Tree Classification</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/gradient_boosted_regression_traverse.py">Gradient Boosted Trees Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/scikit-learn-intelex/tree/main/examples/daal4py/gradient_boosted_classification_traverse.py">Gradient Boosted Trees Classification</a></p></li>
 </ul>
 </section>
 </section>
@@ -256,7 +264,7 @@ All future patches will be available only in Intel(R) Extension for Scikit-learn
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Intel.</p>
+    <p>&#169; Copyright Intel.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
